@@ -1,5 +1,7 @@
 package org.NAK.entities;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 import java.util.Date;
@@ -7,13 +9,13 @@ import org.NAK.enums.CONTRACTSTATUS;
 
 public class Contract {
     private UUID contractId;
-    private Date startDate;
-    private Date endDate;
+    private LocalDate startDate; // Update to LocalDate
+    private LocalDate endDate;
     private float specialPrice;
     private String agreementConditions;
     private boolean renewable;
     private CONTRACTSTATUS contractStatus;
-    private Partner Partner;
+    private Partner partner;
 
     private List<Ticket> ticketList;
 
@@ -30,19 +32,19 @@ public class Contract {
         this.contractId = contractId;
     }
 
-    public Date getStartDate() {
+    public LocalDate  getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(LocalDate  startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public LocalDate  getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(LocalDate  endDate) {
         this.endDate = endDate;
     }
 
@@ -78,12 +80,12 @@ public class Contract {
         this.contractStatus = contractStatus;
     }
 
-    public Partner getIdPartner() {
-        return Partner;
+    public Partner getPartner() {
+        return partner;
     }
 
-    public void setIdPartner(Partner idPartner) {
-        this.Partner = Partner;
+    public void setPartner(Partner partner) {
+        this.partner = partner;
     }
 
     public List<Ticket> getTicketList() {

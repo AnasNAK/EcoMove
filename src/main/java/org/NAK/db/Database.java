@@ -13,7 +13,7 @@ public class Database {
     private static final String PASSWORD = "anas";
 
     private Database() {
-        // Private constructor to prevent instantiation
+
     }
 
     public static Database getInstance() {
@@ -36,7 +36,7 @@ public class Database {
                         conn = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
 
                         if (conn != null) {
-                            System.out.println("Connection to PostgreSQL database established.");
+                            System.out.println("Connection to database established.");
                         }
                     } catch (ClassNotFoundException | SQLException e) {
                         e.printStackTrace();

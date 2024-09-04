@@ -3,41 +3,42 @@ package org.NAK.entities;
 import org.NAK.enums.TRANSPORTTYPE;
 import org.NAK.enums.PARTNERSHIPSTATUS;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 public class Partner {
 
+    private UUID partnerId;
+    private String companyName;
+    private String comercialContact;
+    private TRANSPORTTYPE transportType;
+    private String geographicArea;
+    private String specialCondition;
+    private PARTNERSHIPSTATUS partnershipStatus;
+    private List<Contract> contractList;
 
-private UUID partnerId;
-private String companyName;
-private String comercialContact;
-private TRANSPORTTYPE transportType;
-private String geographicArea;
-private String specialCondition;
-private PARTNERSHIPSTATUS partnershipStatus;
-private List<Contract> contractList;
-
-
-public Partner (){
-    this.partnerId = UUID.randomUUID();
-}
+    public Partner() {
+        this.partnerId = UUID.randomUUID();
+        this.contractList = new ArrayList<>(); // Initialize the contract list here
+    }
 
     public UUID getPartnerId() {
-         return partnerId;
+        return partnerId;
     }
 
-    public void setPartnerId(UUID partnerId){
-    this.partnerId = partnerId;
+    public void setPartnerId(UUID partnerId) {
+        this.partnerId = partnerId;
     }
 
-    public String getCompanyName(){
-    return companyName;
+    public String getCompanyName() {
+        return companyName;
     }
 
-    public void setCompanyName(String companyName){
-    this.companyName = companyName;
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
+
     public String getComercialContact() {
         return comercialContact;
     }
@@ -77,13 +78,12 @@ public Partner (){
     public void setPartnershipStatus(PARTNERSHIPSTATUS partnershipStatus) {
         this.partnershipStatus = partnershipStatus;
     }
-    public List<Contract> getContractList() {
+
+    public List<Contract> getContracts() {
         return this.contractList;
     }
 
-    public void setContractList(Contract contract) {
-      this.contractList.add(contract);
+    public void addContract(Contract contract) {
+        this.contractList.add(contract);
     }
-
-
 }
