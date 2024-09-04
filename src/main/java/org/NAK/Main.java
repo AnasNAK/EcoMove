@@ -1,12 +1,14 @@
 package org.NAK;
 
+import org.NAK.db.Database;
+
 import java.sql.Connection;
 
 public class Main {
 
     public static void main(String[] args) {
         try {
-            Connection conn = Database.getConnection();
+            Connection conn = Database.getInstance().establishConnection();
 
             if (conn != null && !conn.isClosed()) {
                 System.out.println("Connected to the database successfully!");
